@@ -5,8 +5,8 @@ function FindProxyForURL(url, host) {
 
     // 需要使用代理的网站列表
     var proxySites = [
-        "qidian.com",
-        "youtube.com"
+        "www.qidian.com",
+        "m.youtube.com"
     ];
 
     // 检查网站是否需要使用代理
