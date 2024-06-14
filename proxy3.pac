@@ -11,9 +11,20 @@ function FindProxyForURL(url, host) {
 
     // 检查网站是否需要使用代理
     for (var i = 0; i < proxySites.length; i++) {
-        if (dnsDomainIs(host, proxySites[i])) {
-            // 返回代理地址和端口
-            return "PROXY " + proxyIP + ":" + proxyPort;
+        var site = proxySites[i];
+
+        // 如果使用通配符，则使用 shExpMatch 进行匹配
+        if (site.indexOf('*') !== -1) {
+            if (shExpMatch(host, site)) {
+                // 返回代理地址和端口
+                return "PROXY " + proxyIP + ":" + proxyPort;
+            }
+        } else {
+            // 否则，使用 dnsDomainIs 进行匹配
+            if (dnsDomainIs(host, site)) {
+                // 返回代理地址和端口
+                return "PROXY " + proxyIP + ":" + proxyPort;
+            }
         }
     }
 
