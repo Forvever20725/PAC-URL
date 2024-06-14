@@ -5,7 +5,7 @@ function FindProxyForURL(url, host) {
 
     // 需要使用代理的网站列表
     var proxySites = [
-        "m.youtube.com",
+        "www.bilibili.com",
         "*.baidu.com"
     ];
 
