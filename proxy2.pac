@@ -1,6 +1,6 @@
 function FindProxyForURL(url, host) 
 {
-    if (shExpMatch(host, "qidian.com") || shExpMatch(host, "m.youtube.com")) 
+    if (shExpMatch(host, "*.baidu.com") || shExpMatch(host, "m.youtube.com") || shExpMatch(host, "www.qidian.com"))
     {
         return "PROXY 192.168.87.34:3128";
     } 
